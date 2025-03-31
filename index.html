@@ -1,0 +1,29 @@
+<!DOCTYPE html><html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative Image Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1> SURIYA STARDOM </h1>
+        <p>Enter your name and generate Retro poster with your name!</p><input type="text" id="nameInput" placeholder="Enter your name...">
+    <button class="btn generate" onclick="generateImage()">Generate Poster</button>
+ <h2>Follow Us on X</h2>
+        <p>To Download The Poster, follow us on X!</p>         
+<a href="https://x.com/SuriyaStardom" target="_blank" class="btn follow">Follow @SuriyaStardom</a>
+    <canvas id="imageCanvas"></canvas>
+</div>
+
+<!-- Popup Modal -->
+<div id="popup" class="popup">
+    <div class="popup-content">
+        
+        <button class="btn close" onclick="downloadImage()">I Followed, Download Now</button>
+    </div>
+</div>
+
+</body>
+</html>

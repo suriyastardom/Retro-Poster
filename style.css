@@ -1,0 +1,20 @@
+@font-face {
+    font-family: 'CustomFont';
+    src: url('custom-font.ttf') format('truetype');
+}
+
+body {
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+canvas {
+    display: block;
+    margin: 20px auto;
+    border: 1px solid black;
+}
+
+input {
+    padding: 10px;
+    font-size: 16px;
+}
