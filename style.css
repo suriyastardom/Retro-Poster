@@ -16,7 +16,7 @@ canvas {
     margin: 20px auto;
     border: 1px solid black;
     width: auto;
-    height: auto;
+    max-height: 500px;
     display: block;
 }
 
