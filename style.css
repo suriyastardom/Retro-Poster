@@ -58,6 +58,9 @@ input {
 .container{
     display: flex;
     justify-content: center;
+    align-items: center;
     background-color: beige;
 }
-
+img{
+    flex-shrink: 0;
+}    
