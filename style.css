@@ -57,6 +57,6 @@ input {
 
 .container{
     display: flex;
-    justify-content: center;
+    content: center;
     background-color: beige;
 }
