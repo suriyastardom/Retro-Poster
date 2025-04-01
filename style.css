@@ -13,11 +13,9 @@ body {
 
 canvas {
     display: block;
-    margin: auto;
+    margin: 20px auto;
     border: 1px solid black;
-    max-width: 100%;
-    height: auto;
-    display: block;
+    width: 1000px;
 }
 
 input {
@@ -56,8 +54,6 @@ input {
 }
 
 .container{
-    display: flex;
-    justify-content: center;
     background-color: beige;
 }
 
