@@ -1,20 +1,59 @@
 @font-face {
     font-family: 'CustomFont';
     src: url('custom-font.ttf') format('truetype');
+    
 }
 
 body {
     text-align: center;
-    font-family: Arial, sans-serif;
+    background-color:  beige;
+    font-size: large;
+    
 }
 
 canvas {
     display: block;
     margin: 20px auto;
     border: 1px solid black;
+    width: 1000px;
 }
 
 input {
     padding: 10px;
     font-size: 16px;
 }
+.btnclose{
+    border-radius: 4px;
+    cursor: pointer;
+    background-color:  beige;
+}
+.btngenerate{
+    border-radius: 4px;
+    cursor: pointer;
+    background-color:  #28b463;
+    font-size: medium;
+
+}
+.btngenerate:hover{
+    background-color: white;
+}
+.btnfollow {
+
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: black; 
+    color: white; 
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px; 
+    font-size: 16px;
+    transition: background-color 0.3s ease; 
+}
+.btnfollow:hover{
+   background-color: gray;
+}
+
+.container{
+    background-color: beige;
+}
+
