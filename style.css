@@ -15,7 +15,9 @@ canvas {
     display: block;
     margin: 20px auto;
     border: 1px solid black;
-    width: 1000px;
+    max-width: 100px;
+    height: auto;
+    display: block;
 }
 
 input {
