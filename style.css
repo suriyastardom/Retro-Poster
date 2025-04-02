@@ -1,59 +1,272 @@
 @font-face {
     font-family: 'CustomFont';
     src: url('custom-font.ttf') format('truetype');
-    
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-    text-align: center;
-    background-color:  beige;
-    font-size: large;
-    
+    font-family: 'CustomFont', Arial, sans-serif;
+    color: #fff;
+    background: linear-gradient(135deg, #1a1a1a, #333); /* Dark gradient background */
+    overflow-x: hidden;
 }
 
-canvas {
-    display: block;
+/* Hero Section with Background Image */
+.hero-section {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('background.jpg') no-repeat center center/cover; /* Use the same background as the poster */
+    padding: 40px 20px;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Dark overlay for better text readability */
+    z-index: 1;
+}
+
+.container {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 1200px;
+    padding: 20px;
+}
+
+/* Title Animation */
+h1.animate-title {
+    font-size: 4rem;
+    color: #D6D0AC;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    animation: fadeInDown 1.5s ease-in-out;
+}
+
+hr {
     margin: 20px auto;
-    border: 1px solid black;
-    width: 1000px;
+    border: 1px solid #D6D0AC;
 }
 
-input {
-    padding: 10px;
-    font-size: 16px;
+.intro-text {
+    font-size: 1.5rem;
+    margin: 20px 0;
+    color: #D6D0AC;
+    animation: fadeIn 2s ease-in-out;
 }
-.btnclose{
-    border-radius: 4px;
-    cursor: pointer;
-    background-color:  beige;
-}
-.btngenerate{
-    border-radius: 4px;
-    cursor: pointer;
-    background-color:  #28b463;
-    font-size: medium;
 
+h2 {
+    font-size: 2rem;
+    margin: 30px 0 10px;
+    color: #D6D0AC;
 }
-.btngenerate:hover{
-    background-color: white;
+
+/* Input and Button Styling */
+.input-group {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px 0;
 }
+
+.name-input {
+    padding: 12px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 25px;
+    width: 300px;
+    background: rgba(255, 255, 255, 0.9);
+    color: #333;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.name-input:focus {
+    outline: none;
+    transform: scale(1.02);
+}
+
+.btngenerate {
+    padding: 12px 30px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 25px;
+    background: #28b463;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.btngenerate:hover {
+    background: #219653;
+    transform: translateY(-3px);
+}
+
 .btnfollow {
-
     display: inline-block;
-    padding: 10px 20px;
-    background-color: black; 
-    color: white; 
-    text-align: center;
+    padding: 12px 30px;
+    background: #1DA1F2; /* Twitter blue */
+    color: white;
     text-decoration: none;
-    border-radius: 5px; 
-    font-size: 16px;
-    transition: background-color 0.3s ease; 
-}
-.btnfollow:hover{
-   background-color: gray;
+    border-radius: 25px;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: background 0.3s ease, transform 0.3s ease;
 }
 
-.container{
-    background-color: beige;
+.btnfollow:hover {
+    background: #0d8bf0;
+    transform: translateY(-3px);
 }
 
+/* Canvas Styling */
+.canvas {
+    display: block;
+    margin: 30px auto;
+    border: 3px solid #D6D0AC;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 1000px;
+}
+
+/* Download Button Styling */
+#downloadBtn {
+    display: none; /* Initially hidden */
+    margin: 20px auto;
+    padding: 12px 30px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 25px;
+    background: #28b463;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+#downloadBtn:hover {
+    background: #219653;
+    transform: translateY(-3px);
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    0% { opacity: 0; transform: translateY(-50px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+    h1.animate-title {
+        font-size: 2.5rem; /* Smaller title on mobile */
+    }
+
+    hr {
+        width: 200px; /* Smaller HR on mobile */
+    }
+
+    .intro-text {
+        font-size: 1rem; /* Smaller intro text on mobile */
+    }
+
+    h2 {
+        font-size: 1.5rem; /* Smaller heading on mobile */
+    }
+
+    p {
+        font-size: 0.9rem; /* Smaller paragraph text on mobile */
+    }
+
+    .input-group {
+        flex-direction: column; /* Stack input and button vertically */
+        gap: 10px;
+    }
+
+    .name-input {
+        width: 100%; /* Full width input on mobile */
+        font-size: 1rem;
+    }
+
+    .btngenerate {
+        width: 100%; /* Full width button on mobile */
+        font-size: 1rem;
+    }
+
+    .btnfollow {
+        width: 100%; /* Full width follow button on mobile */
+        font-size: 1rem;
+    }
+
+    .canvas {
+        width: 100%; /* Full width canvas on mobile */
+        max-width: 500px; /* Limit max width for better fit */
+    }
+
+    #downloadBtn {
+        width: 100%; /* Full width download button on mobile */
+        font-size: 1rem;
+    }
+
+    .hero-section {
+        padding: 20px 10px; /* Less padding on mobile */
+    }
+
+    .container {
+        padding: 10px; /* Less padding on mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    h1.animate-title {
+        font-size: 2rem; /* Even smaller title on very small screens */
+    }
+
+    hr {
+        width: 150px; /* Even smaller HR on very small screens */
+    }
+
+    .intro-text {
+        font-size: 0.9rem;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+
+    p {
+        font-size: 0.8rem;
+    }
+
+    .name-input {
+        padding: 10px;
+    }
+
+    .btngenerate {
+        padding: 10px;
+    }
+
+    .btnfollow {
+        padding: 10px;
+    }
+
+    #downloadBtn {
+        padding: 10px;
+    }
+}
