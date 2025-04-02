@@ -51,32 +51,19 @@ function drawImage(name = "YOUR NAME") {
 
     document.getElementById("downloadBtn").style.display = "block"; // Show Download Button
 }
-
 function generateImage() {
     let name = document.getElementById("nameInput").value.trim();
     if (name === "") {
-        alert("Enter your name.");
+        alert(" Enter your name!");
         return;
     }
     drawImage(name);
 }
 
-// Show Popup Before Download
-function showPopup() {
-    document.getElementById("popup").style.display = "block";
-}
-
-// Close Popup
-function closePopup() {
-    document.getElementById("popup").style.display = "none";
-}
-
 // Download Image
 function downloadImage() {
-    document.getElementById("popup").style.display = "none"; // Close popup
-
     const link = document.createElement("a");
-    link.download = "custom-image.jpg";
+    link.download = "suriya-stardom-poster.jpg";
     link.href = canvas.toDataURL("image/jpeg");
     link.click();
 }
